@@ -2,7 +2,7 @@ import { Code2, Database, MapPin, Briefcase } from 'lucide-react';
 
 const About = () => {
     return (
-        <section id="about" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
+        <section id="about" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
 
                 <div className="mb-12" style={{ marginBottom: '3rem' }}>
@@ -16,7 +16,13 @@ const About = () => {
                     {/* Left: Professional Summary */}
                     <div className="md:col-span-8 flex flex-col gap-6" style={{ gridColumn: 'span 8 / span 8', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                         <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                            B.Tech Computer Science student specializing in AI & Cybersecurity with hands-on experience in Linux administration and AWS cloud services. I have built practical projects in security, cloud, and intelligent systems, and I possess a strong foundation in networking, system design, and access control. I am passionate about building secure and scalable AI-driven infrastructure and continuously improving my problem-solving skills. I am a quick learner and actively seeking entry-level opportunities in AI, Cybersecurity, and Cloud Security.
+                            Hi, I’m Teljeeru Akhil, a Computer Science student focused on AI, Cybersecurity, and Software Development.
+                        </p>
+                        <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                            I specialize in building secure and intelligent applications using Python, networking, and machine learning, with a strong emphasis on scalable architecture and clean, maintainable code. My work reflects a practical, hands-on approach where I combine Linux, cloud technologies, and security fundamentals to design real-world solutions.
+                        </p>
+                        <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                            I’m passionate about solving complex problems, continuously learning, and contributing to systems that are reliable, efficient, and secure.
                         </p>
                     </div>
 

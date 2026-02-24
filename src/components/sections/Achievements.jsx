@@ -26,7 +26,7 @@ const Achievements = () => {
     ];
 
     return (
-        <section id="achievements" className="section relative" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <section id="achievements" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
                 <div className="mb-12 text-center md:text-left">
                     <h2 className="text-3xl md:text-4xl font-bold font-sans flex items-center justify-center md:justify-start gap-3">

@@ -30,7 +30,7 @@ const Skills = () => {
     ];
 
     return (
-        <section id="skills" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
+        <section id="skills" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
 
                 <div className="mb-12" style={{ marginBottom: '3rem' }}>

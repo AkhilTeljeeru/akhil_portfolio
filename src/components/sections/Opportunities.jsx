@@ -2,7 +2,7 @@ import { Briefcase, Code, BrainCircuit, Layout } from 'lucide-react';
 
 const Opportunities = () => {
     return (
-        <section id="opportunities" className="section relative" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+        <section id="opportunities" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
                 <div className="mb-12 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold font-sans flex items-center justify-center gap-3">

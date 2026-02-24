@@ -6,7 +6,7 @@ const Hero = () => {
     const [isResumeOpen, setIsResumeOpen] = useState(false);
 
     return (
-        <section id="home" className="min-h-screen flex items-center relative overflow-hidden section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+        <section id="home" className="min-h-screen flex items-center relative overflow-hidden section" style={{ position: 'relative', overflow: 'hidden' }}>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/10 rounded-full blur-[120px] pointer-events-none" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', background: 'rgba(0, 112, 243, 0.1)', borderRadius: '50%', filter: 'blur(120px)', pointerEvents: 'none' }} />
 

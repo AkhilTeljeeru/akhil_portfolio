@@ -6,7 +6,7 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
-import DSAProfiles from './components/sections/DSAProfiles';
+
 import Achievements from './components/sections/Achievements';
 import Opportunities from './components/sections/Opportunities';
 import Contact from './components/sections/Contact';
@@ -117,7 +117,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <DSAProfiles />
+
         <Achievements />
         <Opportunities />
         <Contact />

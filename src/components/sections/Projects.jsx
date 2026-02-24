@@ -46,7 +46,7 @@ const Projects = () => {
     const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category.includes(filter));
 
     return (
-        <section id="projects" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
+        <section id="projects" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
 
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" style={{ marginBottom: '3rem' }}>
@@ -73,9 +73,9 @@ const Projects = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
+                <div className="flex overflow-x-auto gap-6 pb-6 pt-2 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
                     {filteredProjects.map((project, idx) => (
-                        <div key={idx} className="card relative flex flex-col h-full group overflow-hidden border border-[var(--divider)] hover:border-[rgba(255,255,255,0.3)] transition-all duration-300 bg-[var(--bg-secondary)] p-6 rounded-xl">
+                        <div key={idx} className="card relative flex flex-col h-full shrink-0 w-[85vw] sm:w-[400px] snap-center sm:snap-start group overflow-hidden border border-[var(--divider)] hover:border-[rgba(255,255,255,0.3)] transition-all duration-300 bg-[var(--bg-secondary)] p-6 rounded-xl">
 
                             {/* Hover Image Background */}
                             <div

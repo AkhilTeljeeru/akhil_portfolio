@@ -40,6 +40,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg-color);
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -77,6 +78,18 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Hide scrollbar utility for horizontal carousels */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Typography Utilities */
@@ -149,8 +162,15 @@ h6 {
 }
 
 .section {
-  padding: 6rem 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 4rem 0;
 }
 
 /* Flex & Grid */
@@ -210,10 +230,6 @@ h6 {
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .section {
-    padding: 8rem 0;
   }
 }
 
