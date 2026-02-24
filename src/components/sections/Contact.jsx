@@ -1,37 +1,78 @@
-import { Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Github, Linkedin, ExternalLink, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
     return (
         <section id="contact" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '8rem' }}>
-            <div className="container max-w-3xl mx-auto text-center" style={{ maxWidth: '48rem', margin: '0 auto', textAlign: 'center' }}>
+            <div className="container max-w-4xl mx-auto" style={{ maxWidth: '800px', margin: '0 auto' }}>
 
-                <div className="inline-block animate-slide-up mb-6">
-                    <span className="text-sm font-mono px-3 py-1 rounded-full glass text-accent-blue" style={{ border: '1px solid var(--glass-border)' }}>
-                        What's Next?
-                    </span>
+                <div className="mb-12 text-center" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                    <h2 className="text-3xl md:text-4xl font-bold font-sans">
+                        Get In <span className="text-secondary">Touch</span>
+                    </h2>
+                    <p className="text-secondary mt-4 max-w-2xl mx-auto">
+                        I'm actively looking for new opportunities in Software Development and AI/ML Engineering.
+                        My inbox is always open for discussions, collaborations, or just a quick hello.
+                    </p>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 font-sans">
-                    Get In <span className="text-gradient hover:scale-105 inline-block transition-transform duration-300">Touch</span>
-                </h2>
+                <div className="grid md:grid-cols-2 gap-6" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
 
-                <p className="text-lg text-secondary mb-12 leading-relaxed" style={{ marginBottom: '3rem' }}>
-                    I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi, my inbox is always open. I'll thoughtfully respond to every message.
-                </p>
+                    {/* Direct Contact */}
+                    <div className="card flex flex-col gap-6">
+                        <h3 className="text-xl font-semibold text-primary font-mono mb-2 border-b border-[var(--divider)] pb-4">Direct Contact</h3>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                    <a href="mailto:akhilteljeeru@example.com" className="btn btn-primary group flex items-center gap-2" style={{ textDecoration: 'none', padding: '1rem 2.5rem', fontSize: '1.125rem' }}>
-                        Say Hello <ExternalLink size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </a>
-
-                    <div className="flex gap-4" style={{ display: 'flex', gap: '1rem' }}>
-                        <a href="https://github.com/akhilteljeeru" target="_blank" rel="noreferrer" className="glass p-4 rounded-xl hover:-translate-y-1 transition-all group cursor-pointer" style={{ padding: '1rem', borderRadius: '0.75rem', textDecoration: 'none', color: 'var(--text-secondary)', border: '1px solid var(--glass-border)' }}>
-                            <Github size={24} className="group-hover:text-primary transition-colors" />
+                        <a href="mailto:akhilteljeeru@example.com" className="flex items-center gap-4 text-secondary hover:text-white transition-colors group" style={{ textDecoration: 'none' }}>
+                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center group-hover:border-white transition-colors">
+                                <Mail size={20} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-mono text-secondary mb-1">Email</p>
+                                <p className="font-medium text-primary">akhilteljeeru@example.com</p>
+                            </div>
                         </a>
-                        <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noreferrer" className="glass p-4 rounded-xl hover:-translate-y-1 transition-all group cursor-pointer" style={{ padding: '1rem', borderRadius: '0.75rem', textDecoration: 'none', color: 'var(--text-secondary)', border: '1px solid var(--glass-border)' }}>
-                            <Linkedin size={24} className="group-hover:text-primary transition-colors" />
+
+                        <div className="flex items-center gap-4 text-secondary">
+                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center">
+                                <Phone size={20} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-mono text-secondary mb-1">Phone</p>
+                                <p className="font-medium text-primary">+91 (Add Number)</p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center gap-4 text-secondary">
+                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center">
+                                <MapPin size={20} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-mono text-secondary mb-1">Location</p>
+                                <p className="font-medium text-primary">India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Social Profiles */}
+                    <div className="card flex flex-col gap-6">
+                        <h3 className="text-xl font-semibold text-primary font-mono mb-2 border-b border-[var(--divider)] pb-4">Social Profiles</h3>
+
+                        <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noreferrer" className="flex items-center justify-between text-secondary hover:text-white transition-colors group p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] hover:border-white" style={{ textDecoration: 'none' }}>
+                            <div className="flex items-center gap-3">
+                                <Linkedin size={24} />
+                                <span className="font-medium text-primary">LinkedIn</span>
+                            </div>
+                            <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+
+                        <a href="https://github.com/akhilteljeeru" target="_blank" rel="noreferrer" className="flex items-center justify-between text-secondary hover:text-white transition-colors group p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] hover:border-white" style={{ textDecoration: 'none' }}>
+                            <div className="flex items-center gap-3">
+                                <Github size={24} />
+                                <span className="font-medium text-primary">GitHub</span>
+                            </div>
+                            <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                         </a>
                     </div>
+
                 </div>
 
             </div>

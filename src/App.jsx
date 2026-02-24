@@ -5,29 +5,27 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
-import Experience from './components/sections/Experience';
+import DSAProfiles from './components/sections/DSAProfiles';
+import GitHubSection from './components/sections/GitHub';
+import Achievements from './components/sections/Achievements';
 import Contact from './components/sections/Contact';
 import './index.css';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Check local storage for theme preference, default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
+    // Force dark theme as per modern developer aesthetic
+    document.documentElement.setAttribute('data-theme', 'dark');
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
+    // Mouse tracking for cursor glow effect
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
 
-  // Setup basic intersection observer for scroll reveal animations
-  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Intersection observer for scroll reveal animations
     const observerCallback = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -46,12 +44,9 @@ function App() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    // Select all sections to animate their entry as they scroll into view
-    // Using a simple timeout to ensure DOM is ready
     setTimeout(() => {
       const elements = document.querySelectorAll('.section > .container > div');
       elements.forEach(el => {
-        // Only observe if not in first section which animates instantly
         if (!el.closest('#home')) {
           el.style.opacity = '0';
           observer.observe(el);
@@ -59,23 +54,37 @@ function App() {
       });
     }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <div className="app-container min-h-screen flex flex-col items-stretch" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      {/* Cursor Glow Effect */}
+      <div
+        className="cursor-glow"
+        style={{
+          left: `${mousePosition.x}px`,
+          top: `${mousePosition.y}px`
+        }}
+      />
 
-      <main className="flex-grow" style={{ flexGrow: 1 }}>
+      <Navbar />
+
+      <main className="flex-grow z-10 relative" style={{ flexGrow: 1 }}>
         <Hero />
         <About />
         <Skills />
         <Projects />
-        <Experience />
+        <DSAProfiles />
+        <GitHubSection />
+        <Achievements />
         <Contact />
       </main>
 
-      <Footer />
+      <Footer className="z-10 relative" />
     </div>
   );
 }

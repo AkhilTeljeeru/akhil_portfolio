@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Download } from 'lucide-react';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
 
@@ -31,9 +31,10 @@ const Navbar = ({ theme, toggleTheme }) => {
 
     const navLinks = [
         { name: 'About', id: 'about' },
-        { name: 'Tech', id: 'skills' },
+        { name: 'Skills', id: 'skills' },
         { name: 'Projects', id: 'projects' },
         { name: 'Experience', id: 'experience' },
+        { name: 'Contact', id: 'contact' },
     ];
 
     return (
@@ -44,17 +45,17 @@ const Navbar = ({ theme, toggleTheme }) => {
             zIndex: 50,
             padding: isScrolled ? '0.75rem 0' : '1.5rem 0',
             transition: 'all 0.3s ease',
-            backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-            backgroundColor: isScrolled ? 'var(--nav-bg)' : 'transparent',
-            borderBottom: isScrolled ? '1px solid var(--glass-border)' : '1px solid transparent',
         }}>
             <div className="container flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <a href="#home" className="font-mono text-xl font-bold" style={{ textDecoration: 'none', color: 'var(--text-primary)' }}>
-                    AT<span className="text-gradient">.</span>
+                <a href="#home" className="font-mono text-xl font-bold flex items-center gap-2" style={{ textDecoration: 'none', color: 'var(--text-primary)' }}>
+                    <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm">
+                        A
+                    </div>
+                    <span>Akhil.</span>
                 </a>
 
                 <div className="flex items-center gap-6" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                    <div className="nav-links hidden md:flex" style={{ display: 'flex', gap: '2rem' }}>
+                    <div className="nav-links hidden md:flex" style={{ display: 'flex', gap: '1.5rem' }}>
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -64,45 +65,33 @@ const Navbar = ({ theme, toggleTheme }) => {
                                     color: activeSection === link.id ? 'var(--text-primary)' : 'var(--text-secondary)',
                                     textDecoration: 'none',
                                     transition: 'color 0.2s',
-                                    fontSize: '0.9rem',
-                                    fontWeight: activeSection === link.id ? 600 : 500,
+                                    fontSize: '0.875rem',
                                     position: 'relative'
                                 }}
                                 onMouseOver={(e) => { if (activeSection !== link.id) e.target.style.color = 'var(--text-primary)' }}
                                 onMouseOut={(e) => { if (activeSection !== link.id) e.target.style.color = 'var(--text-secondary)' }}
                             >
                                 {link.name}
-                                {activeSection === link.id && (
-                                    <span style={{
-                                        position: 'absolute',
-                                        bottom: '-4px',
-                                        left: '0',
-                                        width: '100%',
-                                        height: '2px',
-                                        background: 'var(--accent-gradient)',
-                                        borderRadius: '2px'
-                                    }}></span>
-                                )}
                             </a>
                         ))}
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <button
-                            onClick={toggleTheme}
-                            className="p-2 rounded-full transition-colors flex items-center justify-center"
-                            style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-primary)', display: 'flex', padding: 0 }}
-                            aria-label="Toggle theme"
-                        >
-                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-                        </button>
+                        <div className="hidden sm:flex items-center gap-3 mr-2" style={{ borderRight: '1px solid var(--divider)', paddingRight: '1rem' }}>
+                            <a href="https://github.com/teljeeruakhil" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
+                                <Github size={18} />
+                            </a>
+                            <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
+                                <Linkedin size={18} />
+                            </a>
+                        </div>
 
                         <a
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-secondary text-sm hidden sm:flex"
-                            style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem' }}
+                            className="btn btn-primary text-sm hidden sm:flex"
+                            style={{ padding: '0 1rem', height: '2rem', fontSize: '0.85rem' }}
                         >
                             <Download size={14} /> Resume
                         </a>

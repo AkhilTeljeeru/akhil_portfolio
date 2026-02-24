@@ -1,131 +1,134 @@
-import { Github, ExternalLink, Activity } from 'lucide-react';
+import { useState } from 'react';
+import { Github, ExternalLink, Activity, Code2, Globe, BrainCircuit } from 'lucide-react';
 
 const Projects = () => {
-    const featuredProject = {
-        title: "Cyber Threat Intelligence Toolkit",
-        problem: "Security analysts lack centralized, easily accessible threat data.",
-        solution: "A Python-based centralized detection system with real-time log analysis and automated reporting.",
-        impact: "Reduces manual analysis time by 70% and accelerates incident response.",
-        tags: ["Python", "Flask", "React", "Cybersecurity", "Elasticsearch"],
-        github: "https://github.com/akhilteljeeru",
-        demo: "#"
-    };
+    const [filter, setFilter] = useState('All');
 
-    const otherProjects = [
+    const projects = [
         {
             title: "AI Resume Screening System",
-            description: "An NLP-based resume applicant tracking system that ranks candidates for recruiters based on job description similarity, skill extraction, and experience analysis.",
-            tags: ["Python", "NLP", "Scikit", "Pandas"],
-            github: "https://github.com/akhilteljeeru"
+            category: "AI/ML",
+            problem: "Recruiters spend too much time manually screening resumes for specific job descriptions.",
+            solution: "NLP-based applicant tracking system that ranks candidates based on JD similarity and extracts key skills.",
+            impact: "Automated screening for hundreds of resumes, achieving high precision in keyword matching.",
+            techStack: ["Python", "NLP", "Scikit-Learn", "Pandas", "Flask"],
+            features: ["Resume Parsing", "JD Similarity Scoring", "Skill Extraction"],
+            github: "https://github.com/akhilteljeeru",
+            demo: "#"
+        },
+        {
+            title: "E-Commerce Backend Framework",
+            category: "Web",
+            problem: "Need a highly scalable, secure backend for managing products, users, and transactions.",
+            solution: "Designed a robust REST API ecosystem with JWT authentication, role-based access, and optimized queries.",
+            impact: "Handled simulated high-traffic loads with <200ms response times.",
+            techStack: ["Node.js", "Express", "MongoDB", "Redis", "Docker"],
+            features: ["JWT Auth", "Caching", "Rate Limiting", "Admin Dashboard API"],
+            github: "https://github.com/akhilteljeeru",
+            demo: "#"
+        },
+        {
+            title: "Advanced Pathfinding Visualizer",
+            category: "DSA",
+            problem: "Students struggle to understand how complex graph algorithms operate visually.",
+            solution: "Built an interactive grid visualizer for Dijkstra, A*, BFS, and DFS algorithms.",
+            impact: "Used as an educational tool to demonstrate performance differences between varied heuristic approaches.",
+            techStack: ["React", "JavaScript", "Algorithms", "CSS"],
+            features: ["Maze Generation", "Speed Control", "Real-time Visualization"],
+            github: "https://github.com/akhilteljeeru",
+            demo: "#"
         },
         {
             title: "Fake News Detection System",
-            description: "Machine learning model for accurate news classification. Utilizes advanced text vectorization and supervised learning to detect misinformation with high accuracy.",
-            tags: ["ML", "Python", "NLTK", "Flask"],
-            github: "https://github.com/akhilteljeeru"
+            category: "AI/ML",
+            problem: "Proliferation of misinformation across digital news platforms.",
+            solution: "Text vectorization and supervised learning model classifying news accuracy.",
+            impact: "Achieved 94% accuracy on the test dataset.",
+            techStack: ["Machine Learning", "Python", "NLTK", "Flask"],
+            features: ["Text Vectorization", "Classification Pipeline"],
+            github: "https://github.com/akhilteljeeru",
+            demo: "#"
         }
     ];
 
+    const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
+
     return (
         <section id="projects" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
-            <div className="container" style={{ maxWidth: '1100px' }}>
+            <div className="container" style={{ maxWidth: '1000px' }}>
 
-                <div className="mb-12" style={{ marginBottom: '4rem' }}>
-                    <h2 className="text-3xl md:text-4xl font-bold font-sans">
-                        Featured <span className="text-gradient">Projects</span>
-                    </h2>
-                </div>
-
-                {/* Featured Project Layout */}
-                <div className="glass-card mb-12 flex flex-col md:flex-row gap-0 group relative overflow-hidden" style={{ padding: '0', display: 'flex', flexDirection: 'row', border: '1px solid var(--glass-border)', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)' }}>
-
-                    <div className="flex-1 p-8 md:p-10 relative z-10" style={{ flex: 1, padding: '3rem' }}>
-                        <div className="flex items-center gap-2 mb-4 text-secondary font-mono text-sm" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
-                            <Activity size={14} className="text-accent-blue" /> FEATURED WORK
-                        </div>
-
-                        <h3 className="text-3xl font-bold mb-6 text-primary">{featuredProject.title}</h3>
-
-                        <div className="flex flex-col gap-4 mb-8" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-                            <div>
-                                <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1" style={{ fontSize: '0.75rem', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Problem</h4>
-                                <p className="text-secondary" style={{ color: 'var(--text-secondary)' }}>{featuredProject.problem}</p>
-                            </div>
-                            <div>
-                                <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1" style={{ fontSize: '0.75rem', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Solution</h4>
-                                <p className="text-secondary" style={{ color: 'var(--text-secondary)' }}>{featuredProject.solution}</p>
-                            </div>
-                            <div>
-                                <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1" style={{ fontSize: '0.75rem', color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Impact</h4>
-                                <p className="text-secondary" style={{ color: 'var(--text-secondary)' }}>{featuredProject.impact}</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2 mb-8" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
-                            {featuredProject.tags.map((tag, idx) => (
-                                <span key={idx} className="px-3 py-1 font-mono text-xs rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] text-secondary" style={{ padding: '0.25rem 0.75rem', fontFamily: 'var(--font-mono)', fontSize: '0.75rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)', color: 'var(--text-secondary)' }}>
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-
-                        <div className="flex gap-4" style={{ display: 'flex', gap: '1rem' }}>
-                            <a href={featuredProject.github} target="_blank" rel="noreferrer" className="btn btn-secondary text-sm" style={{ padding: '0.5rem 1rem' }}>
-                                <Github size={16} /> Source Code
-                            </a>
-                            <a href={featuredProject.demo} target="_blank" rel="noreferrer" className="btn btn-primary text-sm" style={{ padding: '0.5rem 1rem' }}>
-                                <ExternalLink size={16} /> Live Demo
-                            </a>
-                        </div>
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" style={{ marginBottom: '3rem' }}>
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans">
+                            Featured <span className="text-secondary">Projects</span>
+                        </h2>
+                        <p className="text-secondary mt-2 max-w-xl">
+                            A selection of my best work focusing on Machine Learning, scalable Web Development, and complex Algorithmic problem-solving.
+                        </p>
                     </div>
 
-                    {/* Clean Developer Console/UI Representation */}
-                    <div className="flex-1 hidden md:flex flex-col border-l border-[rgba(255,255,255,0.08)] bg-[rgba(0,0,0,0.2)]" style={{ flex: 1, display: 'flex', flexDirection: 'column', borderLeft: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.2)' }}>
-                        <div className="flex items-center px-4 py-3 border-b border-[rgba(255,255,255,0.05)] bg-[rgba(0,0,0,0.3)]" style={{ padding: '0.75rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.05)', background: 'rgba(0,0,0,0.3)' }}>
-                            <div className="flex gap-2" style={{ display: 'flex', gap: '0.5rem' }}>
-                                <div className="w-3 h-3 rounded-full bg-red-400/80" style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(248, 113, 113, 0.8)' }}></div>
-                                <div className="w-3 h-3 rounded-full bg-yellow-400/80" style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(250, 204, 21, 0.8)' }}></div>
-                                <div className="w-3 h-3 rounded-full bg-green-400/80" style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(74, 222, 128, 0.8)' }}></div>
-                            </div>
-                            <span className="mx-auto text-xs font-mono text-secondary opacity-60">app.py - Cyber Threat Monitor</span>
-                        </div>
-                        <div className="p-6 font-mono text-xs text-secondary leading-loose" style={{ padding: '1.5rem', fontFamily: 'monospace', fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-                            <p>$ cti-toolkit start --dashboard</p>
-                            <p className="text-green-400" style={{ color: '#4ade80' }}>&gt; Initializing elastic backend...</p>
-                            <p>&gt; Listening on interface eth0</p>
-                            <p>&gt; Analyzing 1,420 incoming connections/sec</p>
-                            <p className="text-yellow-400 mt-2" style={{ color: '#facc15', marginTop: '0.5rem' }}>&gt; [WARN] Unusual payload detected from 192.168.1.5</p>
-                            <p className="text-red-400" style={{ color: '#f87171' }}>&gt; [ALERT] Signature Match: SQLi attemped</p>
-                            <p className="text-accent-blue" style={{ color: 'var(--accent-blue)' }}>&gt; Action taken: Auto-dropped packet. Updating rules...</p>
-                            <br />
-                            <p>&gt; System optimal. 0 active threats.</p>
-                            <p className="animate-pulse">_</p>
-                        </div>
+                    {/* Filters */}
+                    <div className="flex gap-2 p-1 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)]">
+                        {['All', 'AI/ML', 'Web', 'DSA'].map(f => (
+                            <button
+                                key={f}
+                                onClick={() => setFilter(f)}
+                                className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${filter === f ? 'bg-[var(--bg-tertiary)] text-primary shadow-sm border border-[var(--divider)]' : 'text-secondary hover:text-primary'}`}
+                            >
+                                {f}
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Regular Grid for others */}
-                <div className="grid md:grid-cols-2 gap-8" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                    {otherProjects.map((project, idx) => (
-                        <div key={idx} className="glass-card flex flex-col hover:-translate-y-1 transition-transform duration-300" style={{ display: 'flex', flexDirection: 'column', border: '1px solid var(--glass-border)', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)' }}>
-                            <div className="flex justify-between items-start mb-4" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                                <h3 className="text-xl font-bold text-primary">{project.title}</h3>
-                                <a href={project.github} target="_blank" rel="noreferrer" className="text-secondary hover:text-primary transition-colors" style={{ color: 'var(--text-secondary)' }}>
-                                    <Github size={20} />
-                                </a>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
+                    {filteredProjects.map((project, idx) => (
+                        <div key={idx} className="card flex flex-col h-full group">
+
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="flex items-center gap-2">
+                                    {project.category === 'AI/ML' && <BrainCircuit size={18} className="text-accent-blue" />}
+                                    {project.category === 'Web' && <Globe size={18} className="text-accent-violet" />}
+                                    {project.category === 'DSA' && <Code2 size={18} className="text-green-400" />}
+                                    <span className="text-xs font-mono uppercase tracking-wider text-secondary">{project.category}</span>
+                                </div>
+                                <div className="flex gap-2">
+                                    <a href={project.github} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Source Code">
+                                        <Github size={18} />
+                                    </a>
+                                    <a href={project.demo} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Live Demo">
+                                        <ExternalLink size={18} />
+                                    </a>
+                                </div>
                             </div>
 
-                            <p className="text-secondary mb-6 flex-1 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', flex: 1, fontSize: '0.875rem', lineHeight: 1.6 }}>
-                                {project.description}
-                            </p>
+                            <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
 
-                            <div className="flex flex-wrap gap-2 mt-auto" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                                {project.tags.map((tag, tIdx) => (
-                                    <span key={tIdx} className="text-xs font-mono text-secondary" style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
-                                        {tag}
-                                    </span>
-                                ))}
+                            <div className="flex flex-col gap-3 flex-grow mb-6">
+                                <div>
+                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Problem:</span>
+                                    <span className="text-sm text-primary opacity-90">{project.problem}</span>
+                                </div>
+                                <div>
+                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Solution:</span>
+                                    <span className="text-sm text-primary opacity-90">{project.solution}</span>
+                                </div>
+                                <div>
+                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Impact:</span>
+                                    <span className="text-sm text-primary opacity-90">{project.impact}</span>
+                                </div>
                             </div>
+
+                            <div className="mt-auto flex flex-col gap-4 border-t border-[var(--divider)] pt-4">
+                                <div className="flex flex-wrap gap-2">
+                                    {project.techStack.map((tech, tIdx) => (
+                                        <span key={tIdx} className="text-xs font-mono px-2 py-1 rounded bg-[var(--bg-tertiary)] border border-[var(--divider)] text-secondary">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
                         </div>
                     ))}
                 </div>
