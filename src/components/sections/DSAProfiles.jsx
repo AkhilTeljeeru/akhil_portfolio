@@ -46,10 +46,10 @@ const DSAProfiles = () => {
                 <div className="mb-12 text-center md:text-left">
                     <h2 className="text-3xl md:text-4xl font-bold font-sans flex items-center justify-center md:justify-start gap-3">
                         <Code className="text-primary" size={32} />
-                        <span className="text-primary">Competitive <span className="text-gradient">Programming</span></span>
+                        <span className="text-primary">DSA & <span className="text-gradient">Coding Profiles</span></span>
                     </h2>
                     <p className="text-secondary mt-4 max-w-2xl mx-auto md:mx-0">
-                        Consistent problem-solving across various platforms to sharpen algorithmic thinking and data structure optimization.
+                        Showcasing my problem-solving strength through consistent practice and open-source contributions.
                     </p>
                 </div>
 

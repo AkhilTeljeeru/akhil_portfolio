@@ -49,17 +49,8 @@ const GitHubSection = () => {
     ];
 
     return (
-        <section id="github" className="section relative" style={{ paddingTop: '6rem', paddingBottom: '8rem' }}>
+        <section id="github" className="section relative" style={{ paddingTop: '2rem', paddingBottom: '8rem' }}>
             <div className="container" style={{ maxWidth: '1000px' }}>
-                <div className="mb-12" style={{ marginBottom: '3rem' }}>
-                    <h2 className="text-3xl md:text-4xl font-bold font-sans flex items-center gap-3" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <Github size={36} className="text-primary" />
-                        <span className="text-primary">Open Source & <span className="text-gradient">Continuous Learning</span></span>
-                    </h2>
-                    <p className="text-secondary mt-4 max-w-2xl" style={{ marginTop: '1rem', color: 'var(--text-secondary)', maxWidth: '42rem' }}>
-                        I actively contribute to open-source projects, learn in public, and maintain a consistent coding habit to sharpen my skills.
-                    </p>
-                </div>
 
                 <div className="glass-card mb-8" style={{ padding: '2rem', border: '1px solid var(--glass-border)', background: 'var(--bg-secondary)', borderRadius: 'var(--radius-lg)', overflowX: 'auto' }}>
 

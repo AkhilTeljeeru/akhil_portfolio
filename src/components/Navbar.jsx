@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
+import ResumeModal from './ResumeModal';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const [isResumeOpen, setIsResumeOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
 
             // Simple active section tracking
-            const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+            const sections = ['home', 'about', 'skills', 'projects', 'opportunities', 'contact'];
             const scrollPosition = window.scrollY + 100;
 
             for (const section of sections) {
@@ -33,7 +35,7 @@ const Navbar = () => {
         { name: 'About', id: 'about' },
         { name: 'Skills', id: 'skills' },
         { name: 'Projects', id: 'projects' },
-        { name: 'Experience', id: 'experience' },
+        { name: 'Opportunities', id: 'opportunities' },
         { name: 'Contact', id: 'contact' },
     ];
 
@@ -49,9 +51,9 @@ const Navbar = () => {
             <div className="container flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <a href="#home" className="font-mono text-xl font-bold flex items-center gap-2" style={{ textDecoration: 'none', color: 'var(--text-primary)' }}>
                     <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm">
-                        A
+                        TA
                     </div>
-                    <span>Akhil.</span>
+                    <span>Teljeeru Akhil.</span>
                 </a>
 
                 <div className="flex items-center gap-6" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
@@ -86,18 +88,20 @@ const Navbar = () => {
                             </a>
                         </div>
 
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setIsResumeOpen(true);
+                            }}
                             className="btn btn-primary text-sm hidden sm:flex"
                             style={{ padding: '0 1rem', height: '2rem', fontSize: '0.85rem' }}
                         >
                             <Download size={14} /> Resume
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
+            <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
         </nav>
     );
 };

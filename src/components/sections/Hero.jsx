@@ -21,29 +21,26 @@ const Hero = () => {
                         <span>Open to Work • Ready for Immediate Hire</span>
                     </div>
 
-                    <h1 className="text-6xl md:text-8xl font-bold font-sans animate-slide-up delay-100 mt-4 tracking-tighter" style={{ lineHeight: 1 }}>
-                        Akhil<br />
+                    <h1 className="text-6xl md:text-8xl font-bold font-sans animate-slide-up delay-100 tracking-tighter" style={{ lineHeight: 1 }}>
+                        Teljeeru Akhil<br />
                         <span className="text-secondary font-medium tracking-tight mt-2 block" style={{ fontSize: '0.6em' }}>
-                            AI & Software Developer
+                            AI & Cybersecurity Engineer
                         </span>
                     </h1>
 
-                    <p className="text-xl md:text-2xl text-secondary max-w-2xl mt-4 animate-slide-up delay-200" style={{ lineHeight: 1.5, fontWeight: 400 }}>
-                        <span className="text-primary font-medium text-white block mb-2">
-                            Building intelligent real-world applications using Python, Machine Learning and Full-Stack Development
-                        </span>
-                        Strong in Data Structures & Algorithms with a passion for writing scalable software. Look at my projects below!
+                    <p className="text-xl md:text-2xl text-secondary max-w-3xl mt-6 animate-slide-up delay-200" style={{ lineHeight: 1.6, fontWeight: 400 }}>
+                        I build intelligent, secure, and highly scalable cloud-native systems. With a strong foundation in Linux, AWS, and modern networking, I specialize in architecting real-world AI applications and robust security solutions. I am actively seeking roles where I can leverage my expertise to solve complex engineering challenges.
                     </p>
 
-                    <div className="flex flex-wrap gap-3 mt-8 animate-slide-up delay-300" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                        <a href="#projects" className="btn btn-primary" style={{ height: '3rem', padding: '0 1.5rem' }}>
-                            View Work <ArrowRight size={18} />
-                        </a>
-                        <button onClick={() => setIsResumeOpen(true)} className="btn btn-secondary" style={{ height: '3rem', padding: '0 1.5rem' }}>
-                            <Download size={18} /> Resume
+                    <div className="flex flex-wrap gap-4 mt-10 animate-slide-up delay-300 items-center">
+                        <button onClick={() => setIsResumeOpen(true)} className="btn btn-primary" style={{ height: '3rem', padding: '0 1.5rem', gap: '0.5rem' }}>
+                            Resume <Download size={18} />
                         </button>
+                        <a href="#contact" className="btn btn-secondary" style={{ height: '3rem', padding: '0 1.5rem' }}>
+                            Contact Me
+                        </a>
 
-                        <div className="flex gap-2 ml-auto sm:ml-4 border-l border-[var(--divider)] pl-4">
+                        <div className="flex gap-2 sm:gap-3 ml-auto sm:ml-4 border-l border-[var(--divider)] pl-4">
                             <a href="https://github.com/teljeeruakhil" target="_blank" rel="noopener noreferrer"
                                 className="w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--divider)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] hover:border-white transition-all text-secondary hover:text-white"
                                 title="GitHub">
@@ -58,11 +55,6 @@ const Hero = () => {
                                 className="w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--divider)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] hover:border-white transition-all text-secondary hover:text-white"
                                 title="LeetCode">
                                 <Code2 size={20} />
-                            </a>
-                            <a href="mailto:akhilteljeeru@example.com"
-                                className="w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--divider)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] hover:border-white transition-all text-secondary hover:text-white"
-                                title="Email">
-                                <Mail size={20} />
                             </a>
                         </div>
                     </div>

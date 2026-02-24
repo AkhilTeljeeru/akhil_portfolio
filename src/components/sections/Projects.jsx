@@ -1,57 +1,49 @@
 import { useState } from 'react';
-import { Github, ExternalLink, Activity, Code2, Globe, BrainCircuit } from 'lucide-react';
+import { Github, ExternalLink, Code2, Globe, BrainCircuit } from 'lucide-react';
 
 const Projects = () => {
     const [filter, setFilter] = useState('All');
 
     const projects = [
         {
+            title: "Cyber Threat Intelligence (CTI) Toolkit",
+            category: "Cybersecurity / Cloud-Linux",
+            problem: "Traditional systems lack automated real-time monitoring for USB activity, malicious URLs, and suspicious files.",
+            solution: "Developed a Python-based CTI toolkit to detect and analyze security threats.",
+            impact: "Improved incident analysis by automating threat detection and providing real-time security visibility.",
+            techStack: ["Python", "HTML", "CSS"],
+            features: ["USB activity monitoring", "Malicious URL scanning", "Suspicious file analysis", "Automated threat detection", "Structured security report generation", "Real-time dashboard for vulnerability insights"],
+            github: "https://github.com/akhilteljeeru",
+            demo: "#",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+        },
+        {
             title: "AI Resume Screening System",
             category: "AI/ML",
-            problem: "Recruiters spend too much time manually screening resumes for specific job descriptions.",
-            solution: "NLP-based applicant tracking system that ranks candidates based on JD similarity and extracts key skills.",
-            impact: "Automated screening for hundreds of resumes, achieving high precision in keyword matching.",
-            techStack: ["Python", "NLP", "Scikit-Learn", "Pandas", "Flask"],
-            features: ["Resume Parsing", "JD Similarity Scoring", "Skill Extraction"],
+            problem: "Manual resume screening is time-consuming and inefficient for recruiters.",
+            solution: "Built an NLP-based AI system that analyzes resumes and ranks candidates based on job requirements.",
+            impact: "Reduced manual screening effort and improved recruitment efficiency through intelligent candidate filtering.",
+            techStack: ["Python", "NLP", "Machine Learning", "HTML", "CSS"],
+            features: ["Resume parsing and skill extraction", "Job description matching", "Candidate ranking system", "Automated screening workflow", "Simple web-based interface"],
             github: "https://github.com/akhilteljeeru",
-            demo: "#"
+            demo: "#",
+            image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800"
         },
         {
-            title: "E-Commerce Backend Framework",
-            category: "Web",
-            problem: "Need a highly scalable, secure backend for managing products, users, and transactions.",
-            solution: "Designed a robust REST API ecosystem with JWT authentication, role-based access, and optimized queries.",
-            impact: "Handled simulated high-traffic loads with <200ms response times.",
-            techStack: ["Node.js", "Express", "MongoDB", "Redis", "Docker"],
-            features: ["JWT Auth", "Caching", "Rate Limiting", "Admin Dashboard API"],
-            github: "https://github.com/akhilteljeeru",
-            demo: "#"
-        },
-        {
-            title: "Advanced Pathfinding Visualizer",
-            category: "DSA",
-            problem: "Students struggle to understand how complex graph algorithms operate visually.",
-            solution: "Built an interactive grid visualizer for Dijkstra, A*, BFS, and DFS algorithms.",
-            impact: "Used as an educational tool to demonstrate performance differences between varied heuristic approaches.",
-            techStack: ["React", "JavaScript", "Algorithms", "CSS"],
-            features: ["Maze Generation", "Speed Control", "Real-time Visualization"],
-            github: "https://github.com/akhilteljeeru",
-            demo: "#"
-        },
-        {
-            title: "Fake News Detection System",
+            title: "Fake News & Phishing Detection NLP",
             category: "AI/ML",
-            problem: "Proliferation of misinformation across digital news platforms.",
-            solution: "Text vectorization and supervised learning model classifying news accuracy.",
-            impact: "Achieved 94% accuracy on the test dataset.",
-            techStack: ["Machine Learning", "Python", "NLTK", "Flask"],
-            features: ["Text Vectorization", "Classification Pipeline"],
+            problem: "Users struggle to identify malicious phishing links and sophisticated fake news articles.",
+            solution: "Trained an NLP model to classify text credibility and cross-reference known phishing URL patterns.",
+            impact: "Demonstrated 90%+ precision model capabilities for text-based semantic classification.",
+            techStack: ["Python", "NLTK", "Machine Learning", "Flask API"],
+            features: ["TF-IDF Text Vectorization", "URL Pattern Analysis", "Web Dashboard Integration"],
             github: "https://github.com/akhilteljeeru",
-            demo: "#"
+            demo: "#",
+            image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800"
         }
     ];
 
-    const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
+    const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category.includes(filter));
 
     return (
         <section id="projects" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
@@ -68,8 +60,8 @@ const Projects = () => {
                     </div>
 
                     {/* Filters */}
-                    <div className="flex gap-2 p-1 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)]">
-                        {['All', 'AI/ML', 'Web', 'DSA'].map(f => (
+                    <div className="flex flex-wrap gap-2 p-1 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)]">
+                        {['All', 'AI/ML', 'Cybersecurity', 'Cloud/Linux'].map(f => (
                             <button
                                 key={f}
                                 onClick={() => setFilter(f)}
@@ -83,52 +75,67 @@ const Projects = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-4">
                     {filteredProjects.map((project, idx) => (
-                        <div key={idx} className="card flex flex-col h-full group">
+                        <div key={idx} className="card relative flex flex-col h-full group overflow-hidden border border-[var(--divider)] hover:border-[rgba(255,255,255,0.3)] transition-all duration-300 bg-[var(--bg-secondary)] p-6 rounded-xl">
 
-                            <div className="flex justify-between items-start mb-4">
-                                <div className="flex items-center gap-2">
-                                    {project.category === 'AI/ML' && <BrainCircuit size={18} className="text-accent-blue" />}
-                                    {project.category === 'Web' && <Globe size={18} className="text-accent-violet" />}
-                                    {project.category === 'DSA' && <Code2 size={18} className="text-green-400" />}
-                                    <span className="text-xs font-mono uppercase tracking-wider text-secondary">{project.category}</span>
+                            {/* Hover Image Background */}
+                            <div
+                                className="absolute inset-0 z-0 bg-cover bg-center opacity-0 group-hover:opacity-[0.12] transition-opacity duration-500 ease-in-out pointer-events-none"
+                                style={{ backgroundImage: `url(${project.image})` }}
+                            />
+
+                            <div className="relative z-10 flex flex-col h-full">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="flex items-center gap-2">
+                                        {project.category.includes('AI') && <BrainCircuit size={18} className="text-green-400" />}
+                                        {project.category.includes('Cybersecurity') && <Globe size={18} className="text-red-400" />}
+                                        {project.category.includes('Cloud') && <Code2 size={18} className="text-accent-blue" />}
+                                        <span className="text-xs font-mono uppercase tracking-wider text-secondary">{project.category}</span>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <a href={project.github} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Source Code">
+                                            <Github size={18} />
+                                        </a>
+                                        <a href={project.demo} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Live Demo">
+                                            <ExternalLink size={18} />
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="flex gap-2">
-                                    <a href={project.github} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Source Code">
-                                        <Github size={18} />
-                                    </a>
-                                    <a href={project.demo} target="_blank" rel="noreferrer" className="text-secondary hover:text-white transition-colors" title="Live Demo">
-                                        <ExternalLink size={18} />
-                                    </a>
+
+                                <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
+
+                                <div className="flex flex-col gap-3 flex-grow mb-6">
+                                    <div>
+                                        <span className="text-xs font-semibold uppercase text-secondary block mb-1">Problem:</span>
+                                        <span className="text-sm text-primary opacity-90">{project.problem}</span>
+                                    </div>
+                                    <div>
+                                        <span className="text-xs font-semibold uppercase text-secondary block mb-1">Solution & Highlights:</span>
+                                        <span className="text-sm text-primary opacity-90">{project.solution}</span>
+                                        <ul className="text-sm text-secondary mt-2 flex flex-col gap-1 list-none pl-1">
+                                            {project.features.map((feature, fIdx) => (
+                                                <li key={fIdx} className="flex gap-2 items-start">
+                                                    <span className="text-accent-blue mt-[4px] text-[10px]">●</span>
+                                                    {feature}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <span className="text-xs font-semibold uppercase text-secondary block mb-1">Impact:</span>
+                                        <span className="text-sm font-medium text-white bg-white/5 inline-block px-2 py-1 rounded border border-white/10">{project.impact}</span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-auto flex flex-col gap-4 border-t border-[var(--divider)] pt-4">
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.techStack.map((tech, tIdx) => (
+                                            <span key={tIdx} className="text-[11px] font-mono px-2 py-1 rounded bg-[var(--bg-tertiary)] border border-[var(--divider)] text-secondary">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-
-                            <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
-
-                            <div className="flex flex-col gap-3 flex-grow mb-6">
-                                <div>
-                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Problem:</span>
-                                    <span className="text-sm text-primary opacity-90">{project.problem}</span>
-                                </div>
-                                <div>
-                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Solution:</span>
-                                    <span className="text-sm text-primary opacity-90">{project.solution}</span>
-                                </div>
-                                <div>
-                                    <span className="text-xs font-semibold uppercase text-secondary mr-2">Impact:</span>
-                                    <span className="text-sm text-primary opacity-90">{project.impact}</span>
-                                </div>
-                            </div>
-
-                            <div className="mt-auto flex flex-col gap-4 border-t border-[var(--divider)] pt-4">
-                                <div className="flex flex-wrap gap-2">
-                                    {project.techStack.map((tech, tIdx) => (
-                                        <span key={tIdx} className="text-xs font-mono px-2 py-1 rounded bg-[var(--bg-tertiary)] border border-[var(--divider)] text-secondary">
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
                         </div>
                     ))}
                 </div>

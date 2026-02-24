@@ -15,61 +15,36 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                <div className="flex flex-col items-center justify-center gap-6" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
 
-                    {/* Direct Contact */}
-                    <div className="card flex flex-col gap-6">
-                        <h3 className="text-xl font-semibold text-primary font-mono mb-2 border-b border-[var(--divider)] pb-4">Direct Contact</h3>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-mono mb-2">
+                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        Open to opportunities
+                    </div>
 
-                        <a href="mailto:akhilteljeeru@example.com" className="flex items-center gap-4 text-secondary hover:text-white transition-colors group" style={{ textDecoration: 'none' }}>
-                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center group-hover:border-white transition-colors">
-                                <Mail size={20} />
-                            </div>
-                            <div>
-                                <p className="text-sm font-mono text-secondary mb-1">Email</p>
-                                <p className="font-medium text-primary">akhilteljeeru@example.com</p>
-                            </div>
+                    <div className="flex flex-wrap items-center justify-center gap-6">
+                        <a href="mailto:akhilteljeeru@example.com" className="flex items-center gap-2 text-secondary hover:text-white transition-colors group px-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)] hover:border-[var(--accent-blue)]" style={{ textDecoration: 'none' }}>
+                            <Mail size={18} className="text-accent-blue" />
+                            <span>akhilteljeeru@example.com</span>
                         </a>
 
-                        <div className="flex items-center gap-4 text-secondary">
-                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center">
-                                <Phone size={20} />
-                            </div>
-                            <div>
-                                <p className="text-sm font-mono text-secondary mb-1">Phone</p>
-                                <p className="font-medium text-primary">+91 (Add Number)</p>
-                            </div>
+                        <div className="flex items-center gap-2 text-secondary px-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)]">
+                            <Phone size={18} className="text-green-400" />
+                            <span>+91 (Add Number)</span>
                         </div>
 
-                        <div className="flex items-center gap-4 text-secondary">
-                            <div className="w-12 h-12 rounded-full border border-[var(--divider)] bg-[var(--bg-tertiary)] flex items-center justify-center">
-                                <MapPin size={20} />
-                            </div>
-                            <div>
-                                <p className="text-sm font-mono text-secondary mb-1">Location</p>
-                                <p className="font-medium text-primary">India</p>
-                            </div>
+                        <div className="flex items-center gap-2 text-secondary px-4 py-2 rounded-lg bg-[var(--bg-secondary)] border border-[var(--divider)]">
+                            <MapPin size={18} className="text-red-400" />
+                            <span>India</span>
                         </div>
                     </div>
 
-                    {/* Social Profiles */}
-                    <div className="card flex flex-col gap-6">
-                        <h3 className="text-xl font-semibold text-primary font-mono mb-2 border-b border-[var(--divider)] pb-4">Social Profiles</h3>
-
-                        <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noreferrer" className="flex items-center justify-between text-secondary hover:text-white transition-colors group p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] hover:border-white" style={{ textDecoration: 'none' }}>
-                            <div className="flex items-center gap-3">
-                                <Linkedin size={24} />
-                                <span className="font-medium text-primary">LinkedIn</span>
-                            </div>
-                            <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex items-center gap-4 mt-2">
+                        <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-secondary)] border border-[var(--divider)] hover:bg-[var(--bg-tertiary)] hover:text-accent-blue transition-colors text-secondary" aria-label="LinkedIn">
+                            <Linkedin size={20} />
                         </a>
-
-                        <a href="https://github.com/akhilteljeeru" target="_blank" rel="noreferrer" className="flex items-center justify-between text-secondary hover:text-white transition-colors group p-4 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] hover:border-white" style={{ textDecoration: 'none' }}>
-                            <div className="flex items-center gap-3">
-                                <Github size={24} />
-                                <span className="font-medium text-primary">GitHub</span>
-                            </div>
-                            <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <a href="https://github.com/akhilteljeeru" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-[var(--bg-secondary)] border border-[var(--divider)] hover:bg-[var(--bg-tertiary)] hover:text-white transition-colors text-secondary" aria-label="GitHub">
+                            <Github size={20} />
                         </a>
                     </div>
 

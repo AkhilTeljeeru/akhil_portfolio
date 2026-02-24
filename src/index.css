@@ -45,6 +45,10 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-color);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;

@@ -3,29 +3,29 @@ import { Code2, BrainCircuit, Database, Globe, Wrench } from 'lucide-react';
 const Skills = () => {
     const skillCategories = [
         {
-            title: "Languages",
-            icon: <Code2 size={24} />,
-            skills: ["Python", "JavaScript", "C++"]
-        },
-        {
-            title: "Core CS",
-            icon: <Database size={24} />,
-            skills: ["Data Structures", "Algorithms", "OOP", "DBMS", "OS"]
+            title: "Coding Languages",
+            icon: <Code2 size={24} className="text-secondary" />,
+            skills: ["Python", "Java"]
         },
         {
             title: "AI / ML",
-            icon: <BrainCircuit size={24} />,
-            skills: ["NumPy", "Pandas", "Scikit-learn", "NLP", "TensorFlow"]
+            icon: <BrainCircuit size={24} className="text-green-400" />,
+            skills: ["NumPy", "Pandas", "Scikit-learn", "NLP"]
         },
         {
-            title: "Web Development",
-            icon: <Globe size={24} />,
-            skills: ["React", "Node.js", "Express", "Firebase", "HTML", "CSS"]
+            title: "Cybersecurity",
+            icon: <Wrench size={24} className="text-red-400" />,
+            skills: ["Linux Security", "Network Security"]
         },
         {
-            title: "Tools",
-            icon: <Wrench size={24} />,
-            skills: ["Git", "GitHub", "VS Code", "Postman"]
+            title: "Networking",
+            icon: <Database size={24} className="text-accent-violet" />,
+            skills: ["TCP/IP", "DNS", "HTTP/HTTPS", "Firewalls"]
+        },
+        {
+            title: "Tools & Frameworks",
+            icon: <Code2 size={24} className="text-secondary" />,
+            skills: ["GitHub", "VS Code", "Unity"]
         }
     ];
 
@@ -39,28 +39,37 @@ const Skills = () => {
                     </h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
-                    {skillCategories.map((category, idx) => (
-                        <div key={idx} className="card flex flex-col items-start gap-4">
-                            <div className="flex items-center gap-3 w-full border-b border-[var(--divider)] pb-4">
-                                <div className="text-white">
-                                    {category.icon}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mx-auto" style={{ maxWidth: '800px' }}>
+                    {skillCategories.map((category, idx) => {
+                        // If it is the last item and the total is odd, we want it to span both columns and center itself on desktop
+                        const isLastOddItem = idx === skillCategories.length - 1 && skillCategories.length % 2 !== 0;
+                        return (
+                            <div
+                                key={idx}
+                                className={`card flex flex-col items-start gap-4 h-full ${isLastOddItem ? 'md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto' : ''}`}
+                                style={isLastOddItem ? { width: '100%' } : {}}
+                            >
+                                <div className="flex items-center gap-3 w-full border-b border-[var(--divider)] pb-4">
+                                    <div className="text-white">
+                                        {category.icon}
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-primary font-mono">{category.title}</h3>
                                 </div>
-                                <h3 className="text-lg font-semibold text-primary font-mono">{category.title}</h3>
-                            </div>
 
-                            <div className="flex flex-wrap gap-2 w-full mt-2">
-                                {category.skills.map((skill, sIdx) => (
-                                    <span
-                                        key={sIdx}
-                                        className="badge"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
+                                <div className="flex flex-wrap gap-2 w-full mt-2" style={{ padding: '0.25rem' }}>
+                                    {category.skills.map((skill, sIdx) => (
+                                        <span
+                                            key={sIdx}
+                                            className="badge whitespace-nowrap"
+                                            style={{ width: 'max-content' }}
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
             </div>
