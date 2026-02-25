@@ -14,7 +14,7 @@ const Achievements = () => {
             category: "Certification",
             date: "2024",
             details: "Gained foundational knowledge in networking concepts including IP addressing, routing, switching, network protocols, and network security fundamentals.",
-            icon: <BookOpen size={20} className="text-accent-blue" />
+            icon: <BookOpen size={20} className="text-accent-main" />
         },
         {
             title: "Ethical Hacking Virtual Internship — EduSkills",
@@ -43,7 +43,7 @@ const Achievements = () => {
                         <div key={idx} className="card flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
                             <div className="flex items-start justify-between mb-4">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-[var(--accent-blue)] transition-colors">
+                                    <div className="w-12 h-12 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-[var(--accent-main)] transition-colors">
                                         {item.icon}
                                     </div>
                                     <div>
@@ -67,3 +67,12 @@ const Achievements = () => {
 };
 
 export default Achievements;
+
+
+
+
+
+
+
+
+

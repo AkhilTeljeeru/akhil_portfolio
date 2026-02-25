@@ -27,9 +27,9 @@ const ResumeModal = ({ isOpen, onClose }) => {
                     <h3 className="font-mono text-primary font-bold">Resume.pdf</h3>
                     <div className="flex gap-4 items-center">
                         <a
-                            href="/resume.pdf"
+                            href="/my_resume.pdf"
                             download
-                            className="text-sm font-medium text-accent-blue hover:text-white transition-colors"
+                            className="text-sm font-medium text-accent-main hover:text-white transition-colors"
                         >
                             Download PDF
                         </a>
@@ -45,7 +45,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
                 {/* PDF Viewer Body */}
                 <div className="flex-grow bg-[#333] w-full h-full relative">
                     <iframe
-                        src="/resume.pdf#toolbar=0"
+                        src="/my_resume.pdf#toolbar=0"
                         className="w-full h-full border-none"
                         title="Resume Preview"
                     />
@@ -66,3 +66,12 @@ const ResumeModal = ({ isOpen, onClose }) => {
 };
 
 export default ResumeModal;
+
+
+
+
+
+
+
+
+

@@ -22,7 +22,7 @@ const Footer = () => {
                     <a href="https://github.com/akhilteljeeru" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors" style={{ color: 'var(--text-secondary)' }}>
                         <Github size={20} />
                     </a>
-                    <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors" style={{ color: 'var(--text-secondary)' }}>
+                    <a href="https://www.linkedin.com/in/akhil-teljeeru/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary transition-colors" style={{ color: 'var(--text-secondary)' }}>
                         <Linkedin size={20} />
                     </a>
                     <a href="mailto:akhilteljeeru@example.com" className="text-secondary hover:text-primary transition-colors" style={{ color: 'var(--text-secondary)' }}>
@@ -34,7 +34,7 @@ const Footer = () => {
                     Designed & Built by Akhil Teljeeru
                 </p>
                 <div className="flex items-center gap-2 justify-center text-xs text-secondary opacity-60" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', justifyContent: 'center', fontSize: '0.75rem', opacity: 0.6 }}>
-                    <span className="w-1 h-1 rounded-full bg-accent-blue" style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--accent-blue)' }}></span>
+                    <span className="w-1 h-1 rounded-full bg-accent-main" style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--accent-main)' }}></span>
                     All rights reserved. © {new Date().getFullYear()}
                 </div>
             </div>
@@ -43,3 +43,12 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
+
+
+

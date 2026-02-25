@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Download, Github, Linkedin, Mail } from 'lucide-react';
-import ResumeModal from './ResumeModal';
+import { Eye, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
-    const [isResumeOpen, setIsResumeOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -80,30 +78,45 @@ const Navbar = () => {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                         <div className="hidden sm:flex items-center gap-3 mr-2" style={{ borderRight: '1px solid var(--divider)', paddingRight: '1rem' }}>
-                            <a href="https://github.com/teljeeruakhil" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
+                            <a href="https://github.com/AkhilTeljeeru" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
                                 <Github size={18} />
                             </a>
-                            <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
+                            <a href="https://www.linkedin.com/in/akhil-teljeeru/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors">
                                 <Linkedin size={18} />
                             </a>
                         </div>
 
-                        <button
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setIsResumeOpen(true);
-                            }}
+                        <a
+                            href="/my_resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-secondary text-sm hidden sm:flex"
+                            style={{ padding: '0 1rem', height: '2rem', fontSize: '0.85rem' }}
+                        >
+                            <Eye size={14} /> View
+                        </a>
+                        <a
+                            href="/my_resume.pdf"
+                            download
                             className="btn btn-primary text-sm hidden sm:flex"
                             style={{ padding: '0 1rem', height: '2rem', fontSize: '0.85rem' }}
                         >
                             <Download size={14} /> Resume
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
-            <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
         </nav>
     );
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+

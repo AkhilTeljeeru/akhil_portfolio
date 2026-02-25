@@ -1,92 +1,67 @@
-import { Calendar, Award, Briefcase } from 'lucide-react';
+import { Shield, Lock } from 'lucide-react';
 
 const Experience = () => {
     const experiences = [
         {
             title: "Cybersecurity Virtual Intern",
             company: "ShadowFox",
-            date: "2024 - Present",
-            description: "Participated in network security assessments and analyzed threat intelligence feeds."
+            date: "2024",
+            icon: <Shield size={24} className="text-accent-main" />,
+            points: [
+                "Performed vulnerability assessments in simulated lab environments",
+                "Worked with Kali Linux and security analysis tools",
+                "Hands-on ethical hacking and network security practice"
+            ]
         },
         {
-            title: "Ethical Hacking Virtual Internship",
-            company: "Eduskills",
-            date: "2023",
-            description: "Learned core penetration testing techniques and vulnerability scanning methodologies."
-        }
-    ];
-
-    const certifications = [
-        {
-            title: "CCNA Introduction to Networks",
-            issuer: "Cisco",
-            date: "2023"
+            title: "Ethical Hacking Virtual Intern",
+            company: "EduSkills",
+            date: "2024",
+            icon: <Lock size={24} className="text-green-400" />,
+            points: [
+                "Learned penetration testing methodology",
+                "Performed vulnerability scanning",
+                "Worked in a virtual security lab setup"
+            ]
         }
     ];
 
     return (
-        <section id="experience" className="section relative" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
-            <div className="container" style={{ maxWidth: '1000px' }}>
+        <section id="experience" className="section relative flex items-center justify-center">
+            <div className="container">
 
-                <div className="mb-16" style={{ marginBottom: '4rem' }}>
+                <div className="mb-12" style={{ marginBottom: '3rem' }}>
                     <h2 className="text-3xl md:text-4xl font-bold font-sans">
-                        Experience & <span className="text-gradient">Certifications</span>
+                        <span className="text-secondary">Work</span> Experience
                     </h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-16" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+                <div className="flex flex-col gap-6 w-full mx-auto" style={{ maxWidth: '800px' }}>
+                    {experiences.map((exp, idx) => (
+                        <div key={idx} className="card relative flex flex-col md:flex-row gap-6 p-8 items-start">
 
-                    {/* Experience Column */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-                            <Briefcase size={20} className="text-accent-blue" />
-                            <h3 className="text-xl font-bold text-primary">Work Experience</h3>
-                        </div>
+                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--divider)] flex items-center justify-center">
+                                {exp.icon}
+                            </div>
 
-                        <div className="relative border-l border-[rgba(255,255,255,0.08)] ml-3 pl-8 pb-4 flex flex-col gap-10" style={{ position: 'relative', borderLeft: '1px solid var(--glass-border)', marginLeft: '0.75rem', paddingLeft: '2rem', paddingBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-                            {experiences.map((exp, idx) => (
-                                <div key={idx} className="relative group" style={{ position: 'relative' }}>
-                                    {/* Timeline dot */}
-                                    <div className="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-accent-blue/30 border-2 border-accent-blue transition-colors group-hover:bg-accent-blue" style={{ position: 'absolute', left: '-37px', top: '0.25rem', width: '0.75rem', height: '0.75rem', borderRadius: '50%', background: 'rgba(59, 130, 246, 0.3)', border: '2px solid var(--accent-blue)', transition: 'background-color 0.3s' }}></div>
-
-                                    <div className="flex flex-col gap-1" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                                        <div className="flex items-center gap-2 text-xs font-mono text-secondary mb-1" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>
-                                            <Calendar size={12} /> {exp.date}
-                                        </div>
-                                        <h4 className="text-lg font-bold text-primary">{exp.title}</h4>
-                                        <p className="text-accent-blue font-medium text-sm mb-2" style={{ color: 'var(--accent-blue)', fontWeight: 500, fontSize: '0.875rem', marginBottom: '0.5rem' }}>{exp.company}</p>
-                                        <p className="text-secondary text-sm leading-relaxed" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>{exp.description}</p>
-                                    </div>
+                            <div className="flex-grow flex flex-col gap-3">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                                    <h3 className="text-xl font-bold text-primary">{exp.title}</h3>
+                                    <span className="badge w-max bg-[var(--bg-tertiary)]">{exp.date}</span>
                                 </div>
-                            ))}
+                                <div className="text-lg font-medium text-accent-main">{exp.company}</div>
+
+                                <ul className="mt-2 space-y-2">
+                                    {exp.points.map((point, pIdx) => (
+                                        <li key={pIdx} className="flex items-start gap-3 text-secondary text-base leading-relaxed">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 flex-shrink-0 opacity-50" />
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Certifications Column */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-8" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
-                            <Award size={20} className="text-accent-violet" />
-                            <h3 className="text-xl font-bold text-primary">Certifications</h3>
-                        </div>
-
-                        <div className="relative border-l border-[rgba(255,255,255,0.08)] ml-3 pl-8 pb-4 flex flex-col gap-10" style={{ position: 'relative', borderLeft: '1px solid var(--glass-border)', marginLeft: '0.75rem', paddingLeft: '2rem', paddingBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-                            {certifications.map((cert, idx) => (
-                                <div key={idx} className="relative group" style={{ position: 'relative' }}>
-                                    {/* Timeline dot */}
-                                    <div className="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-accent-violet/30 border-2 border-accent-violet transition-colors group-hover:bg-accent-violet" style={{ position: 'absolute', left: '-37px', top: '0.25rem', width: '0.75rem', height: '0.75rem', borderRadius: '50%', background: 'rgba(139, 92, 246, 0.3)', border: '2px solid var(--accent-violet)', transition: 'background-color 0.3s' }}></div>
-
-                                    <div className="flex flex-col gap-1" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                                        <div className="flex items-center gap-2 text-xs font-mono text-secondary mb-1" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: 'var(--text-secondary)', marginBottom: '0.25rem' }}>
-                                            <Calendar size={12} /> {cert.date}
-                                        </div>
-                                        <h4 className="text-lg font-bold text-primary">{cert.title}</h4>
-                                        <p className="text-accent-violet font-medium text-sm" style={{ color: 'var(--accent-violet)', fontWeight: 500, fontSize: '0.875rem' }}>{cert.issuer}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
+                    ))}
                 </div>
 
             </div>
@@ -95,3 +70,12 @@ const Experience = () => {
 };
 
 export default Experience;
+
+
+
+
+
+
+
+
+

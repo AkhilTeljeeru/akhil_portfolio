@@ -33,8 +33,8 @@ const Opportunities = () => {
                     </div>
 
                     <div className="card flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-300">
-                        <div className="w-16 h-16 rounded-full bg-[var(--bg-tertiary)] flex items-center justify-center mb-6 group-hover:bg-accent-blue/10 transition-colors">
-                            <Layout size={28} className="text-accent-blue" />
+                        <div className="w-16 h-16 rounded-full bg-[var(--bg-tertiary)] flex items-center justify-center mb-6 group-hover:bg-accent-main/10 transition-colors">
+                            <Layout size={28} className="text-accent-main" />
                         </div>
                         <h3 className="text-xl font-bold text-primary mb-3">Software Developer</h3>
                         <p className="text-sm text-secondary">
@@ -48,3 +48,12 @@ const Opportunities = () => {
 };
 
 export default Opportunities;
+
+
+
+
+
+
+
+
+

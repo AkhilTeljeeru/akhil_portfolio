@@ -32,7 +32,7 @@ const About = () => {
                             <div className="mb-8 pb-8 border-b border-[var(--divider)]">
                                 <h3 className="font-bold text-xl text-primary mb-2">Akhil Teljeeru</h3>
                                 <p className="text-sm text-secondary flex items-center gap-1.5">
-                                    <MapPin size={16} className="text-accent-blue" /> India
+                                    <MapPin size={16} className="text-accent-main" /> India
                                 </p>
                             </div>
 
@@ -68,3 +68,12 @@ const About = () => {
 };
 
 export default About;
+
+
+
+
+
+
+
+
+

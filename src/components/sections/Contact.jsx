@@ -60,16 +60,16 @@ const Contact = () => {
                     {/* Left Column: Typography and Info */}
                     <div className="flex flex-col gap-10">
                         <div className="space-y-6">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 text-[var(--accent-blue)] text-sm font-medium tracking-wide w-max">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--accent-main)]/10 border border-[var(--accent-main)]/20 text-[var(--accent-main)] text-sm font-medium tracking-wide w-max">
                                 <span className="relative flex h-2.5 w-2.5">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent-blue)] opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--accent-blue)]"></span>
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent-main)] opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--accent-main)]"></span>
                                 </span>
                                 Open to opportunities
                             </div>
 
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans leading-[1.15] text-[var(--text-primary)]">
-                                Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-blue)] to-purple-400">impactful.</span>
+                                Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-main)] to-purple-400">impactful.</span>
                             </h2>
 
                             <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-lg">
@@ -80,10 +80,10 @@ const Contact = () => {
 
                         <div className="flex flex-col gap-6 pt-4 border-t border-[var(--divider)]">
                             <a href="mailto:akhilteljeeru@example.com" className="group flex items-center gap-5 w-max">
-                                <div className="w-12 h-12 rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-[var(--accent-blue)] group-hover:bg-[var(--accent-blue)]/5 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all duration-300">
-                                    <Mail size={20} className="text-[var(--text-secondary)] group-hover:text-[var(--accent-blue)] transition-colors" />
+                                <div className="w-12 h-12 rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-[var(--accent-main)] group-hover:bg-[var(--accent-main)]/5 group-hover:shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all duration-300">
+                                    <Mail size={20} className="text-[var(--text-secondary)] group-hover:text-[var(--accent-main)] transition-colors" />
                                 </div>
-                                <span className="text-lg font-medium text-[var(--text-primary)] group-hover:text-[var(--accent-blue)] transition-colors">
+                                <span className="text-lg font-medium text-[var(--text-primary)] group-hover:text-[var(--accent-main)] transition-colors">
                                     akhilteljeeru@example.com
                                 </span>
                             </a>
@@ -108,7 +108,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-center gap-4 pt-4">
-                            <a href="https://linkedin.com/in/akhilteljeeru" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] text-[var(--text-secondary)] hover:border-[#0A66C2] hover:text-[#0A66C2] hover:shadow-[0_0_15px_rgba(10,102,194,0.3)] hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/akhil-teljeeru/" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] text-[var(--text-secondary)] hover:border-[#0A66C2] hover:text-[#0A66C2] hover:shadow-[0_0_15px_rgba(10,102,194,0.3)] hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
                                 <Linkedin size={22} />
                             </a>
                             <a href="https://github.com/akhilteljeeru" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] text-[var(--text-secondary)] hover:border-white hover:text-white hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:-translate-y-1 transition-all duration-300" aria-label="GitHub">
@@ -165,6 +165,7 @@ const Contact = () => {
                                         name="message"
                                         id="message"
                                         required
+                                        rows={4}
                                         className="form-textarea"
                                         placeholder="Hello, I'd like to talk about..."
                                     ></textarea>
@@ -207,3 +208,12 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
+
+
+
+
+

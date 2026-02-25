@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Github, GitBranch, Star, GitCommit } from 'lucide-react';
 
 const GitHubSection = () => {
@@ -29,14 +30,14 @@ const GitHubSection = () => {
         return data;
     };
 
-    const contributionData = generateContributions();
+    const [contributionData] = useState(() => generateContributions());
 
     const getColorClass = (level) => {
         switch (level) {
-            case 1: return 'bg-accent-blue/30 border border-accent-blue/10'; // #0e4429 on github dark
-            case 2: return 'bg-accent-blue/50 border border-accent-blue/20'; // #006d32
-            case 3: return 'bg-accent-blue/80 border border-accent-blue/30'; // #26a641
-            case 4: return 'bg-accent-blue border border-accent-blue/40 shadow-[0_0_8px_rgba(59,130,246,0.5)]'; // #39d353
+            case 1: return 'bg-accent-main/30 border border-accent-main/10'; // #0e4429 on github dark
+            case 2: return 'bg-accent-main/50 border border-accent-main/20'; // #006d32
+            case 3: return 'bg-accent-main/80 border border-accent-main/30'; // #26a641
+            case 4: return 'bg-accent-main border border-accent-main/40 shadow-[0_0_8px_rgba(0,255,255,0.5)]'; // #39d353
             default: return 'bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.08)]';
         }
     };
@@ -61,10 +62,10 @@ const GitHubSection = () => {
                         <div className="flex items-center gap-2 text-xs text-secondary font-mono" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', fontFamily: 'monospace', color: 'var(--text-secondary)' }}>
                             <span>Less</span>
                             <div className="w-3 h-3 rounded-sm bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)]" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}></div>
-                            <div className="w-3 h-3 rounded-sm bg-accent-blue/30 border border-accent-blue/10" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(59, 130, 246, 0.3)', border: '1px solid rgba(59, 130, 246, 0.1)' }}></div>
-                            <div className="w-3 h-3 rounded-sm bg-accent-blue/50 border border-accent-blue/20" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(59, 130, 246, 0.5)', border: '1px solid rgba(59, 130, 246, 0.2)' }}></div>
-                            <div className="w-3 h-3 rounded-sm bg-accent-blue/80 border border-accent-blue/30" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(59, 130, 246, 0.8)', border: '1px solid rgba(59, 130, 246, 0.3)' }}></div>
-                            <div className="w-3 h-3 rounded-sm bg-accent-blue border border-accent-blue/40" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(59, 130, 246, 1)', border: '1px solid rgba(59, 130, 246, 0.4)' }}></div>
+                            <div className="w-3 h-3 rounded-sm bg-accent-main/30 border border-accent-main/10" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(0, 255, 255, 0.3)', border: '1px solid rgba(0, 255, 255, 0.1)' }}></div>
+                            <div className="w-3 h-3 rounded-sm bg-accent-main/50 border border-accent-main/20" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(0, 255, 255, 0.5)', border: '1px solid rgba(0, 255, 255, 0.2)' }}></div>
+                            <div className="w-3 h-3 rounded-sm bg-accent-main/80 border border-accent-main/30" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(0, 255, 255, 0.8)', border: '1px solid rgba(0, 255, 255, 0.3)' }}></div>
+                            <div className="w-3 h-3 rounded-sm bg-accent-main border border-accent-main/40" style={{ width: '12px', height: '12px', borderRadius: '2px', background: 'rgba(0, 255, 255, 1)', border: '1px solid rgba(0, 255, 255, 0.4)' }}></div>
                             <span>More</span>
                         </div>
                     </div>
@@ -100,3 +101,12 @@ const GitHubSection = () => {
 };
 
 export default GitHubSection;
+
+
+
+
+
+
+
+
+

@@ -10,7 +10,14 @@
 
   --accent-primary: #ffffff;
   --accent-muted: #333333;
-  --accent-blue: #0070f3;
+
+  /* Theme Colors */
+  --theme-cyan: #00FFFF;
+  --theme-blue: #007BFF;
+  --theme-neon: #00FFB2;
+
+  /* Active Theme */
+  --accent-main: var(--theme-cyan);
 
   --glass-bg: rgba(10, 10, 10, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -156,7 +163,7 @@ h6 {
 /* Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -170,7 +177,13 @@ h6 {
   justify-content: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: 4rem 0;
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 8rem 0;
+  }
 }
 
 /* Flex & Grid */
@@ -391,7 +404,7 @@ h6 {
   background: var(--bg-secondary);
   border: 1px solid var(--divider);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
@@ -408,7 +421,7 @@ h6 {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -428,7 +441,7 @@ h6 {
   border: 1px solid var(--divider);
   color: var(--text-primary);
   border-radius: var(--radius-md);
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 1rem;
   font-family: var(--font-sans);
   font-size: 1rem;
   transition: all var(--transition-normal);
@@ -437,9 +450,9 @@ h6 {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--accent-blue);
+  border-color: var(--accent-main);
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.15);
 }
 
 .form-textarea {
