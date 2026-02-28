@@ -53,9 +53,9 @@ const Contact = () => {
 
     return (
         <section id="contact" ref={sectionRef} className="section relative flex items-center justify-center overflow-hidden min-h-screen py-20">
-            <div className={`container max-w-7xl mx-auto px-6 md:px-12 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+            <div className={`container transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`} style={{ maxWidth: '1000px', padding: '0 1rem' }}>
 
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div className="contact-grid">
 
                     {/* Left Column: Typography and Info */}
                     <div className="flex flex-col gap-10">
@@ -68,7 +68,7 @@ const Contact = () => {
                                 Open to opportunities
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans leading-[1.15] text-[var(--text-primary)]">
+                            <h2 style={{ fontSize: 'clamp(1.75rem, 6vw, 3.5rem)', fontWeight: 700, lineHeight: 1.15 }}>
                                 Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-main)] to-purple-400">impactful.</span>
                             </h2>
 
@@ -79,7 +79,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex flex-col gap-6 pt-4 border-t border-[var(--divider)]">
-                            <a href="mailto:akhilteljeeru@example.com" className="group flex items-center gap-5 w-max">
+                            <a href="mailto:akhilteljeeru@example.com" className="group flex items-center gap-5">
                                 <div className="w-12 h-12 rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-[var(--accent-main)] group-hover:bg-[var(--accent-main)]/5 group-hover:shadow-[0_0_15px_rgba(0,255,255,0.3)] transition-all duration-300">
                                     <Mail size={20} className="text-[var(--text-secondary)] group-hover:text-[var(--accent-main)] transition-colors" />
                                 </div>
@@ -88,7 +88,7 @@ const Contact = () => {
                                 </span>
                             </a>
 
-                            <div className="group flex items-center gap-5 w-max">
+                            <div className="group flex items-center gap-5">
                                 <div className="w-12 h-12 rounded-xl bg-[var(--bg-secondary)] border border-[var(--divider)] flex items-center justify-center group-hover:border-green-400 group-hover:bg-green-400/5 group-hover:shadow-[0_0_15px_rgba(74,222,128,0.3)] transition-all duration-300">
                                     <Phone size={20} className="text-[var(--text-secondary)] group-hover:text-green-400 transition-colors" />
                                 </div>
@@ -206,6 +206,9 @@ const Contact = () => {
         </section>
     );
 };
+
+// Note: contact-grid styles are injected via index.css or a style block is not needed here;
+// the contact-grid class is defined in index.css
 
 export default Contact;
 

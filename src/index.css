@@ -488,3 +488,52 @@ h6 {
   opacity: 0.7;
   cursor: not-allowed;
 }
+
+/* ===== Contact Section Responsive Grid ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+/* ===== Global Mobile Overrides ===== */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 4.5rem 0 2.5rem;
+  }
+
+  /* Back to top button – smaller margin on mobile */
+  .back-to-top-btn {
+    right: 1rem;
+    bottom: 1.25rem;
+  }
+
+  /* Contact info text – allow wrapping */
+  .group .text-lg {
+    font-size: 1rem;
+  }
+}
+
+/* Animate ping for status dot */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.animate-ping {
+  animation: ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

@@ -105,7 +105,7 @@ function App() {
           transform: showBackToTop ? 'translateY(0)' : 'translateY(20px)',
           transition: 'all 0.3s ease'
         }}
-        className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 shadow-lg cursor-pointer border-none"
+        className="back-to-top-btn w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 shadow-lg cursor-pointer border-none"
         title="Back to Top"
       >
         <ArrowUp size={20} />

@@ -1,79 +1,82 @@
-import { Code2, Database, MapPin, Briefcase } from 'lucide-react';
+import { MapPin, Briefcase } from 'lucide-react';
 
 const About = () => {
     return (
         <section id="about" className="section relative flex items-center justify-center">
             <div className="container" style={{ maxWidth: '1000px' }}>
 
-                <div className="mb-12" style={{ marginBottom: '3rem' }}>
-                    <h2 className="text-3xl md:text-4xl font-bold font-sans">
-                        About <span className="text-secondary">Me</span>
+                <div style={{ marginBottom: '3rem' }}>
+                    <h2 style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', fontWeight: 700 }}>
+                        About <span style={{ color: 'var(--text-secondary)' }}>Me</span>
                     </h2>
                 </div>
 
-                <div className="grid md:grid-cols-12 gap-10 items-center" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '2.5rem', alignItems: 'center' }}>
+                <div className="about-grid">
 
                     {/* Left: Professional Summary */}
-                    <div className="md:col-span-8 flex flex-col gap-6" style={{ gridColumn: 'span 8 / span 8', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                            Hi, I’m Teljeeru Akhil, a Computer Science student focused on AI, Cybersecurity, and Software Development.
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                            Hi, I'm Teljeeru Akhil, a Computer Science student focused on AI, Cybersecurity, and Software Development.
                         </p>
-                        <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                             I specialize in building secure and intelligent applications using Python, networking, and machine learning, with a strong emphasis on scalable architecture and clean, maintainable code. My work reflects a practical, hands-on approach where I combine Linux, cloud technologies, and security fundamentals to design real-world solutions.
                         </p>
-                        <p className="text-secondary text-lg leading-relaxed" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                            I’m passionate about solving complex problems, continuously learning, and contributing to systems that are reliable, efficient, and secure.
+                        <p style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                            I'm passionate about solving complex problems, continuously learning, and contributing to systems that are reliable, efficient, and secure.
                         </p>
                     </div>
 
                     {/* Right: Quick Facts Card */}
-                    <div className="md:col-span-4" style={{ gridColumn: 'span 4 / span 4' }}>
-                        <div className="card flex flex-col" style={{ padding: '2.5rem 2rem' }}>
-                            <div className="mb-8 pb-8 border-b border-[var(--divider)]">
-                                <h3 className="font-bold text-xl text-primary mb-2">Akhil Teljeeru</h3>
-                                <p className="text-sm text-secondary flex items-center gap-1.5">
-                                    <MapPin size={16} className="text-accent-main" /> India
+                    <div>
+                        <div className="card" style={{ padding: '2rem 1.75rem' }}>
+                            <div style={{ marginBottom: '1.75rem', paddingBottom: '1.75rem', borderBottom: '1px solid var(--divider)' }}>
+                                <h3 style={{ fontWeight: 700, fontSize: '1.15rem', marginBottom: '0.4rem' }}>Akhil Teljeeru</h3>
+                                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                                    <MapPin size={15} style={{ color: 'var(--accent-main)', flexShrink: 0 }} /> India
                                 </p>
                             </div>
 
-                            <div className="flex flex-col gap-10">
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                                 <div>
-                                    <h4 className="text-xs uppercase tracking-wider text-secondary font-mono mb-3">Education</h4>
-                                    <div className="text-base text-primary font-medium">
-                                        B.Tech – Computer Science (AI & ML)
-                                    </div>
-                                    <div className="text-sm text-secondary mt-1">
-                                        Final Year
-                                    </div>
+                                    <h4 style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.6rem' }}>Education</h4>
+                                    <div style={{ fontSize: '0.95rem', fontWeight: 600 }}>B.Tech – Computer Science (AI &amp; ML)</div>
+                                    <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>Final Year</div>
                                 </div>
 
                                 <div>
-                                    <h4 className="text-xs uppercase tracking-wider text-secondary font-mono mb-3">Current Status</h4>
-                                    <div className="flex items-start gap-2 text-sm text-primary">
-                                        <Briefcase size={16} className="text-green-400 mt-[3px] shrink-0" />
-                                        <span className="leading-relaxed font-medium">
-                                            Actively Interviewing <span className="opacity-40 mx-1">|</span> <span className="text-secondary font-normal block sm:inline mt-1 sm:mt-0">Open to AI & Cybersecurity Roles</span>
+                                    <h4 style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', marginBottom: '0.6rem' }}>Current Status</h4>
+                                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.875rem' }}>
+                                        <Briefcase size={15} style={{ color: '#4ade80', marginTop: '2px', flexShrink: 0 }} />
+                                        <span style={{ fontWeight: 600 }}>
+                                            Actively Interviewing
+                                            <span style={{ display: 'block', color: 'var(--text-secondary)', fontWeight: 400, marginTop: '0.2rem' }}>
+                                                Open to AI &amp; Cybersecurity Roles
+                                            </span>
                                         </span>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
+
+            <style>{`
+                .about-grid {
+                    display: grid;
+                    gap: 2rem;
+                    grid-template-columns: 1fr;
+                }
+                @media (min-width: 768px) {
+                    .about-grid {
+                        grid-template-columns: 2fr 1fr;
+                        gap: 2.5rem;
+                        align-items: start;
+                    }
+                }
+            `}</style>
         </section>
     );
 };
 
 export default About;
-
-
-
-
-
-
-
-
-
