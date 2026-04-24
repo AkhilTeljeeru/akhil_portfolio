@@ -118,10 +118,10 @@ const Navbar = () => {
                                     <Linkedin size={18} />
                                 </a>
                             </div>
-                            <a href="/my_resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0 1rem', height: '2rem', fontSize: '0.8rem', gap: '0.35rem' }}>
+                            <a href="/RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0 1rem', height: '2rem', fontSize: '0.8rem', gap: '0.35rem' }}>
                                 <Eye size={13} /> View
                             </a>
-                            <a href="/my_resume.pdf" download className="btn btn-primary" style={{ padding: '0 1rem', height: '2rem', fontSize: '0.8rem', gap: '0.35rem' }}>
+                            <a href="/RESUME.pdf" download className="btn btn-primary" style={{ padding: '0 1rem', height: '2rem', fontSize: '0.8rem', gap: '0.35rem' }}>
                                 <Download size={13} /> Resume
                             </a>
                         </div>
@@ -207,10 +207,10 @@ const Navbar = () => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem' }}>
-                    <a href="/my_resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ flex: 1, justifyContent: 'center', gap: '0.5rem' }}>
+                    <a href="/RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ flex: 1, justifyContent: 'center', gap: '0.5rem' }}>
                         <Eye size={16} /> View Resume
                     </a>
-                    <a href="/my_resume.pdf" download className="btn btn-primary" style={{ flex: 1, justifyContent: 'center', gap: '0.5rem' }}>
+                    <a href="/RESUME.pdf" download className="btn btn-primary" style={{ flex: 1, justifyContent: 'center', gap: '0.5rem' }}>
                         <Download size={16} /> Download
                     </a>
                 </div>

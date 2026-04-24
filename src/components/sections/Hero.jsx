@@ -43,10 +43,10 @@ const Hero = () => {
 
                     {/* CTA Buttons */}
                     <div className="animate-slide-up delay-300 hero-buttons">
-                        <a href="/my_resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ height: '2.75rem', padding: '0 1.25rem', gap: '0.4rem' }}>
+                        <a href="/RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ height: '2.75rem', padding: '0 1.25rem', gap: '0.4rem' }}>
                             View <Eye size={16} />
                         </a>
-                        <a href="/my_resume.pdf" download className="btn btn-primary" style={{ height: '2.75rem', padding: '0 1.25rem', gap: '0.4rem' }}>
+                        <a href="/RESUME.pdf" download className="btn btn-primary" style={{ height: '2.75rem', padding: '0 1.25rem', gap: '0.4rem' }}>
                             Resume <Download size={16} />
                         </a>
                         <a href="#contact" className="btn btn-secondary" style={{ height: '2.75rem', padding: '0 1.25rem' }}>
